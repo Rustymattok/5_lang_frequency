@@ -13,11 +13,10 @@ def load_data(file_path):
 
 
 def get_most_frequent_words(text_string):
-    text = text_string.lower()
-    match_pattern = re.findall(r'\b[\w]{2,15}\b', text)
-    words_list = collections.Counter(match_pattern)
-    words_list_popular = words_list.most_common(10)
-    return words_list_popular
+    text_lower = text_string.lower()
+    match_pattern = re.findall(r'\b[\w]{2,15}\b', text_lower)
+    words_list = collections.Counter(match_pattern).most_common(10)
+    return words_list
 
 
 def print_words(words_list):
