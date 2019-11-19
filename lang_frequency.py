@@ -13,9 +13,10 @@ def load_data(file_path):
 
 
 def get_most_frequent_words(text_string):
+    num_words = 10
     text_lower = text_string.lower()
     match_pattern = re.findall(r'\b[\w]{2,15}\b', text_lower)
-    words_top_ten = collections.Counter(match_pattern).most_common(10)
+    words_top_ten = collections.Counter(match_pattern).most_common(num_words)
     return words_top_ten
 
 
